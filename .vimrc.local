@@ -5,3 +5,54 @@ vnoremap // y/<C-R>"<CR>
 nnoremap ` <ESC>
 noremap <F1> <ESC>
 set nofoldenable
+nmap <F8> :TagbarToggle<CR>
+"get list of all the buffers
+"open buffers with :next **/*.js
+nnoremap gb :ls<CR>:b<Space>
+"find stuff recursively starting from the current directory
+set path=.,**
+nnoremap <leader>f :find *
+nnoremap <leader>s :sfind *
+nnoremap <leader>v :vert sfind *
+nnoremap <leader>t :tabfind *
+nnoremap <leader>F :find <C-R>=expand('%:h').'/*'<CR>
+nnoremap <leader>S :sfind <C-R>=expand('%:h').'/*'<CR>
+nnoremap <leader>V :vert sfind <C-R>=expand('%:h').'/*'<CR>
+nnoremap <leader>T :tabfind <C-R>=expand('%:h').'/*'<CR>
+
+"This mapping uses regex search instead of whole word search so I can do ,jba<Tab> to find tag foobarbaz()
+nnoremap <leader>j :tjump /
+
+"wildmode tells Vim how you want the "wildmenu" to behave:
+
+set wildmode=list:full
+"wildignore filters out all the cruft:
+
+set wildignore=*.swp,*.bak,*~
+set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=tags
+set wildignore+=*.tar.*
+"wildignorecase allows you to search for foo and find Foo:
+set wildignorecase
+"File marks
+
+"It creates a file mark at the exact position of the cursor whenever you leave a buffer so that, wherever you are, 'J jumps to the latest JavaScript buffer you edited
+augroup VIMRC
+  autocmd!
+
+  autocmd BufLeave *.css  normal! mC
+  autocmd BufLeave *.html normal! mH
+  autocmd BufLeave *.js   normal! mJ
+  autocmd BufLeave *.php  normal! mP
+augroup END
+
+
+nnoremap <leader>wa :Waction 
+nnoremap <leader>wf :Wfilter 
+nnoremap <leader>ws :Wscaffold 
+nnoremap <leader>we :Weval 
+nnoremap <leader>wp :Wplugin 
+"nnoremap <leader>w/ :Wsearchcodex 
+
+let g:snips_author = 'Stefan Marogel <office@brunomag.com>'
