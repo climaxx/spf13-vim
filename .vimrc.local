@@ -1,0 +1,7 @@
+filetype plugin on
+"set omnifunc=syntaxcomplete#Complete
+nnoremap <leader>. :CtrlPTag<cr>
+vnoremap // y/<C-R>"<CR>
+nnoremap ` <ESC>
+noremap <F1> <ESC>
+set nofoldenable
