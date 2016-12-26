@@ -1,0 +1,10 @@
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php',   'javascript', 'html', 'misc',]
+let g:airline_powerline_fonts=1
+let g:phpcomplete_mappings = {
+   \ 'jump_to_def': '<C-]>',
+   \ 'jump_to_def_split': '<C-W><C-]>',
+   \ 'jump_to_def_vsplit': '<C-W><C-\>',
+   \}
+let g:spf13_no_omni_complete = 1
+let g:spf13_no_neosnippet_expand = 1
+let g:spf13_noninvasive_completion = 1
