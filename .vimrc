@@ -123,7 +123,7 @@
 
     "set autowrite                       " Automatically write a file when leaving a modified buffer
     set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
-    set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+    set viewoptions=options,cursor,unix,slash " Better Unix / Windows compatibility
     set virtualedit=onemore             " Allow for cursor beyond last character
     set history=1000                    " Store a ton of history (default is 20)
     set spell                           " Spell checking on
@@ -229,7 +229,8 @@
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
-    set foldenable                  " Auto fold code
+    "set foldenable                  " Auto 
+    code
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -611,7 +612,7 @@
     " }
 
     " Session List {
-        set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
+        set sessionoptions=blank,buffers,curdir,tabpages,winsize
         if isdirectory(expand("~/.vim/bundle/sessionman.vim/"))
             nmap <leader>sl :SessionList<CR>
             nmap <leader>ss :SessionSave<CR>
