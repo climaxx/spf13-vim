@@ -1,3 +1,2 @@
 Plugin 'dsawardekar/wordpress.vim'
-Plugin 'mattn/emmet-vim'
 Bundle 'wakatime/vim-wakatime'
