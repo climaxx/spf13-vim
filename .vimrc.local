@@ -56,3 +56,17 @@ nnoremap <leader>wp :Wplugin
 "nnoremap <leader>w/ :Wsearchcodex 
 
 let g:snips_author = 'Stefan Marogel <office@brunomag.com>'
+
+"Insert newlines 
+nnoremap <leader>nn O<esc>
+nnoremap <leader>n o<esc>
+nnoremap <leader>N O<esc>
+"The mapping takes a register (or * by default) and opens it in the cmdline-window. Hit <cr> when you're done editing for setting the register.
+"Use it like this <leader>m or "q<leader>m.
+
+nnoremap <leader>m  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(v:register))<cr><c-f><left>
+"Bigger / smaller font size
+command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1', '')
+command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1', '')
+"set complete-=i   " disable scanning included files
+"set complete-=t   " disable searching tags
